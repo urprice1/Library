@@ -30,10 +30,10 @@ local Library = {
     HudRegistry = {};
 
     FontColor = Color3.fromRGB(255, 255, 255);
-    MainColor = Color3.fromRGB(28, 28, 28);
-    BackgroundColor = Color3.fromRGB(20, 20, 20);
-    AccentColor = Color3.fromRGB(0, 85, 255);
-    OutlineColor = Color3.fromRGB(50, 50, 50);
+    MainColor = Color3.fromRGB(29, 23, 66);
+    BackgroundColor = Color3.fromRGB(25, 19, 53);
+    AccentColor = Color3.fromRGB(106, 0, 184);
+    OutlineColor = Color3.fromRGB(60, 53, 93);
     RiskColor = Color3.fromRGB(255, 50, 50),
 
     Black = Color3.new(0, 0, 0);
@@ -46,19 +46,19 @@ local Library = {
     ScreenGui = ScreenGui;
 };
 
-local RainbowStep = 10
-local Hue = 80
+local RainbowStep = 0
+local Hue = 0
 
 table.insert(Library.Signals, RenderStepped:Connect(function(Delta)
     RainbowStep = RainbowStep + Delta
 
     if RainbowStep >= (1 / 60) then
-        RainbowStep = 10
+        RainbowStep = 0
 
         Hue = Hue + (1 / 400);
 
         if Hue > 1 then
-            Hue = 80;
+            Hue = 0;
         end;
 
         Library.CurrentRainbowHue = Hue;
